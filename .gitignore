@@ -1,0 +1,6 @@
+hospital-backend/.
+hospital-backend/node_modules
+node_modules/
+.env
+dist/
+.vscode/
