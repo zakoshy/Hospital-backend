@@ -1,7 +1,7 @@
 const Prescription = require("../models/Prescription");
 const PharmacyDischarge = require("../models/PharmacyDischarge");
 const DepartmentVisit = require("../models/DepartmentVisit");
-const sendSMS = require("../utils/sendSMS");
+const sendSMS = require("../utils/africasTalking");
 
 // ✅ Create a new prescription (called by doctors)
 exports.createPrescription = async (req, res) => {
