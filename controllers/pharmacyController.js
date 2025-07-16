@@ -1,5 +1,9 @@
 const Prescription = require("../models/Prescription");
+<<<<<<< HEAD
 const PharmacyDischarge = require('../models/PharmacyDischarge');
+=======
+const PharmacyDischarge = require('../models/pharmacyDischarge');
+>>>>>>> 71a1c2c120e4332ac03e3755ce2d0f128e35feb3
 const DepartmentVisit = require('../models/DepartmentVisit');
 
 // ✅ Create a new prescription (called by doctors)
