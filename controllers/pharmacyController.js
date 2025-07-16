@@ -1,10 +1,7 @@
 const Prescription = require("../models/Prescription");
-<<<<<<< HEAD
-const PharmacyDischarge = require('../models/PharmacyDischarge');
-=======
-const PharmacyDischarge = require('../models/pharmacyDischarge');
->>>>>>> 71a1c2c120e4332ac03e3755ce2d0f128e35feb3
-const DepartmentVisit = require('../models/DepartmentVisit');
+const PharmacyDischarge = require("../models/PharmacyDischarge");
+const DepartmentVisit = require("../models/DepartmentVisit");
+const sendSMS = require("../utils/sendSMS");
 
 // ✅ Create a new prescription (called by doctors)
 exports.createPrescription = async (req, res) => {
@@ -88,14 +85,13 @@ exports.dischargePatient = async (req, res) => {
       return res.status(400).json({ message: "Missing discharge data." });
     }
 
-    // ✅ Create a PharmacyDischarge record (OPTIONAL)
+
     
     await PharmacyDischarge.create({
       patientId,
       unavailableMeds,
       dischargedAt: new Date()
     });
-    
 
     // ✅ Update pharmacy prescriptions as complete
     const prescriptions = await Prescription.updateMany(
@@ -134,7 +130,6 @@ exports.dischargePatient = async (req, res) => {
     }
 
     res.status(200).json({ message: "Patient discharged successfully." });
-
   } catch (err) {
     console.error("❌ Error discharging patient:", err);
     res.status(500).json({ message: "Server error." });
