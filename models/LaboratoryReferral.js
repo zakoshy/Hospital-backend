@@ -12,7 +12,7 @@ const laboratoryReferralSchema = new mongoose.Schema({
     required: true
   },
   testsRequested: {
-    type: String,
+    type: [String],
     required: true
   },
   status: {
